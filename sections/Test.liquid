@@ -1,0 +1,44 @@
+{{ 'test.css' | asset_url | stylesheet_tag }}
+<script>
+function toggleOrder() {
+  const container = document.getElementById('toggle-container');
+  container.classList.toggle('is-swapped');
+  
+}
+</script>
+<div id="toggle-container" class="d-flex-row">
+  <span class='headingClass'>
+    {{ section.settings.footer }} 
+  </span>
+
+  <button class='btn' onclick="toggleOrder()">Swap elements</button>
+
+  <span class='imageClass'>
+    <img src='{{ section.settings.Customimage | image_url }}' width='100px' height='100px'/>
+  </span>
+</div>
+
+
+{% schema %}
+{
+  "name": "Test Section yyyyy",
+    "settings": [
+        {
+  "type": "text",
+  "id": "footer",
+  "label": "Heading",
+  "default": "Quick links"
+}, {
+  "type": "image_picker",
+  "id": "Customimage",
+  "label": "Image"
+}
+
+        
+    ],
+    "presets": [
+        {
+        "name": "Test Section"
+        }]
+}
+{% endschema %}

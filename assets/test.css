@@ -1,0 +1,8 @@
+.d-flex-row {
+  display: flex;
+  flex-direction: row ;
+  gap:600px 
+}
+
+.is-swapped {
+  flex-direction: row-reverse; }
